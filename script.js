@@ -1,6 +1,11 @@
 // Obtener referencias a los elementos
-const video = document.getElementById('porscheVideo');
+const video = document.querySelector('video');
 const title = document.getElementById('title');
+
+// Configurar atributos del video
+video.muted = true;
+video.playsInline = true;
+video.loop = false;
 
 // Reproducir el video cuando se carga la página
 window.addEventListener('load', () => {
@@ -27,9 +32,6 @@ video.addEventListener('ended', function() {
     }, 200);
 });
 
-// Asegurar que el video no se repita
-video.loop = false;
-
 // Opcional: Mostrar en consola cuando el video está listo
 video.addEventListener('loadeddata', () => {
     console.log('Video cargado y listo para reproducir');
@@ -40,14 +42,3 @@ video.addEventListener('error', (e) => {
     console.error('Error al cargar el video:', e);
     alert('No se pudo cargar el video. Verifica que el archivo existe y está en la carpeta correcta.');
 });
-```
-
----
-
-## 📁 **Estructura final:**
-```
-Mi-Proyecto-Porsche/
-├── index.html          ← Pega el código HTML aquí
-├── styles.css          ← Pega el código CSS aquí
-├── script.js           ← Pega el código JavaScript aquí
-└── porshe-video-inicio.mp4  ← Tu video aquí
